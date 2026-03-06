@@ -73,3 +73,5 @@ When you start the crawler with a URL like `https://books.toscrape.com/`:
 - Error logging: structured logs with request context and response codes.
 - Graceful shutdown: handle signals and allow in-flight work to finish cleanly.
 - Checkpointing: persist the crawl queue and visited set to resume after crashes.
+- Depth control: limit how deep the crawler goes from the starting URL.
+  - We would include a depth parameter that increments with each level of crawling, and the crawler would stop adding new URLs to the queue once a specified depth is reached.
