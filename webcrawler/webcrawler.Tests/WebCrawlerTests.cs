@@ -6,17 +6,17 @@ namespace webcrawler.Tests;
 public class WebCrawlerTests
 {
     [Theory]
-    [InlineData("https://crawlme.monzo.com/page1", true)]
-    [InlineData("https://crawlme.monzo.com", true)]
-    [InlineData("https://crawlme.monzo.com/path/to/page", true)]
-    [InlineData("https://monzo.com/", false)]
-    [InlineData("https://community.monzo.com/", false)]
+    [InlineData("https://crawlme.gonzo.com/page1", true)]
+    [InlineData("https://crawlme.gonzo.com", true)]
+    [InlineData("https://crawlme.gonzo.com/path/to/page", true)]
+    [InlineData("https://gonzo.com/", false)]
+    [InlineData("https://community.gonzo.com/", false)]
     [InlineData("https://facebook.com/", false)]
-    [InlineData("http://crawlme.monzo.com/", true)] // Same host, different scheme - allow it
+    [InlineData("http://crawlme.gonzo.com/", true)] // Same host, different scheme - allow it
     public void IsSameDomain_ShouldReturnCorrectResult(string url, bool expected)
     {
         // Arrange
-        var crawler = new WebCrawler("https://crawlme.monzo.com/", new HttpClient(), TextWriter.Null);
+        var crawler = new WebCrawler("https://crawlme.gonzo.com/", new HttpClient(), TextWriter.Null);
 
         // Act
         var result = crawler.IsSameDomain(url);
@@ -29,7 +29,7 @@ public class WebCrawlerTests
     public void IsSameDomain_WithInvalidUrl_ShouldReturnFalse()
     {
         // Arrange
-        var crawler = new WebCrawler("https://crawlme.monzo.com/", new HttpClient(), TextWriter.Null);
+        var crawler = new WebCrawler("https://crawlme.gonzo.com/", new HttpClient(), TextWriter.Null);
 
         // Act
         var result = crawler.IsSameDomain("not-a-valid-url");

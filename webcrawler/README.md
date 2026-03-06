@@ -18,7 +18,7 @@ A simple web crawler built with .NET 8 that crawls websites within a single subd
 ### Run with a URL argument:
 
 ```bash
-dotnet run https://crawlme.monzo.com/
+dotnet run https://books.toscrape.com/
 ```
 
 ### Run interactively:
@@ -27,7 +27,7 @@ dotnet run https://crawlme.monzo.com/
 dotnet run
 ```
 
-Then enter the URL when prompted. You can omit the scheme (e.g., `crawlme.monzo.com`) and the crawler will automatically use `https://`.
+Then enter the URL when prompted. You can omit the scheme (e.g., `books.toscrape.com`) and the crawler will automatically use `https://`.
 
 ### Run the tests:
 
@@ -41,7 +41,7 @@ This will run the full test suite, including unit tests for link extraction, dom
 
 ## How It Works
 
-When you start the crawler with a URL like `https://crawlme.monzo.com/`:
+When you start the crawler with a URL like `https://books.toscrape.com/`:
 
 1. **Visit the starting page** - The crawler fetches the HTML content from your starting URL
 2. **Extract all links** - It parses the HTML and finds every link on the page
@@ -52,10 +52,10 @@ When you start the crawler with a URL like `https://crawlme.monzo.com/`:
 7. **Finish** - Once all reachable pages on the subdomain are visited, the crawler prints a summary
 
 **The crawler stays within boundaries:**
-- ✅ `crawlme.monzo.com/about` - Same subdomain, will visit
-- ✅ `crawlme.monzo.com/blog/post-1` - Same subdomain, will visit
-- ❌ `monzo.com` - Different subdomain, will skip
-- ❌ `community.monzo.com` - Different subdomain, will skip
+- ✅ `books.toscrape.com/about` - Same subdomain, will visit
+- ✅ `books.toscrape.com/blog/post-1` - Same subdomain, will visit
+- ❌ `toscrape.com` - Different subdomain, will skip
+- ❌ `community.toscrape.com` - Different subdomain, will skip
 - ❌ `facebook.com` - External domain, will skip
 
 **Safety features:**
