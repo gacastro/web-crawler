@@ -1,0 +1,57 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.sln.DotSettings.user
+*.rsuser
+*.suo
+*.opencover.xml
+*.coveragexml
+
+# Rider
+.idea/
+*.sln.iml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+
+# JetBrains
+.idea/
+*.iml
+
+# User-specific files
+.vscode/
+launch.json
+settings.json
+
+# Test results
+TestResults/
+coverage/
+*.trx
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Environment files
+.env
+.env.local
+
+# OS files
+Thumbs.db
+

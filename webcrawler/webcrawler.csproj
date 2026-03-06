@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>webcrawler</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Remove="webcrawler.Tests/**" />
+    </ItemGroup>
+    <ItemGroup>
+        <InternalsVisibleTo Include="webcrawler.Tests" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="AngleSharp" Version="1.1.2" />
+    </ItemGroup>
+</Project>
